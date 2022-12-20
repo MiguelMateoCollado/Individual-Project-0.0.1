@@ -1,5 +1,5 @@
 import axios from "axios";
-const base_url = process.env.REACT_APP_API
+//const base_url = process.env.REACT_APP_API
 //Trae todos los juego
 export function getAllGames() {
   return async function (dispatch) {
