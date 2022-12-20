@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const base_url = process.env.REACT_APP_API
 //Trae todos los juego
 export function getAllGames() {
   return async function (dispatch) {
     try {
-      var json = await axios.get("http://localhost:3001/videogames");
+      var json = await axios.get(`https://individual-project-001-production.up.railway.app/videogames`);
       return dispatch({
         type: "GET_ALL_GAMES",
         payload: json.data,
