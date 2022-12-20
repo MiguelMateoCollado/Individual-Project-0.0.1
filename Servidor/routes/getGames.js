@@ -59,7 +59,8 @@ getGames.get("/", async (req, res) => {
 
     return res.status(200).json(videogames);
   } catch (error) {
-    res.json({ error });
+    console.log(error);
+    res.json(error);
   }
 });
 
