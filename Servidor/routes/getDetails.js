@@ -37,7 +37,7 @@ getDetails.get("/:id", async (req, res) => {
       platforms: gameFinded[0].platforms.map(
         (platform) => platform.platform.name
       ),
-      genres: gameFinded[0].genres.map((gen) => gen.name)
+      generos: gameFinded[0].genres.map((gen) => gen.name)
     };
     return res.json(GameDetail);
   } catch (error) {

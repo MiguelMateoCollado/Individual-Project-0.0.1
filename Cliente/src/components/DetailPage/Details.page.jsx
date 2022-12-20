@@ -12,7 +12,6 @@ function Details() {
   useEffect(() => {
     dispatch(getDetails(id));
   }, [dispatch, id]);
-
   const myGame = useSelector((state) => state.detail);
   console.log(myGame);
   return (
