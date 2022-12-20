@@ -3,6 +3,7 @@ const videogameModel = require("./models/Videogames");
 const platformsModel = require("./models/Plataformas");
 const genresModel = require("./models/Generos");
 require("dotenv").config();
+const fs = require("fs");
 DB_URL = process.env.DB;
 DB_DEPLOY = process.env.DB_DEPLOY;
 

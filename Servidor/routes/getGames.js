@@ -6,6 +6,7 @@ const getVideogames = require("./videogames/getVideogames");
 getGames.get("/", async (req, res) => {
   try {
     let videogames = await getVideogames();
+
     let gamesDB = await videogame.findAll({
       include: generos,
       through: {
@@ -14,7 +15,7 @@ getGames.get("/", async (req, res) => {
     });
     let query_name = req.query.name;
 
-     videogames = await videogames.map((game) => {
+    videogames = await videogames.map((game) => {
       const newGame = {
         id: game.id,
         name: game.name,
@@ -24,7 +25,7 @@ getGames.get("/", async (req, res) => {
         rating: game.rating,
         image: game.background_image,
       };
-      return newGame
+      return newGame;
     });
 
     gamesDB = await gamesDB.map((game) => {
@@ -58,7 +59,7 @@ getGames.get("/", async (req, res) => {
 
     return res.status(200).json(videogames);
   } catch (error) {
-    res.json({ error: "Estos juegos no existen" });
+    res.json({ error });
   }
 });
 
