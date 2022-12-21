@@ -1,4 +1,3 @@
-const { response } = require("express");
 const express = require("express");
 const PostGame = express.Router();
 const { videogame, generos, plataformas } = require("../db.js");

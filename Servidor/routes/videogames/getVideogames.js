@@ -1,4 +1,4 @@
-
+const fetch = require("node-fetch")
 async function getVideogames() {
   let key = "9094a53c63b44a4bb20f4371bb277ede";
   let url1 = await fetch(

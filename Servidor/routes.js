@@ -10,4 +10,5 @@ router.use("/platforms", getPlatforms);
 router.use("/generos", getGenres);
 router.use("/create", PostGame);
 router.use("/videogames", getDetails)
+
 module.exports = router;

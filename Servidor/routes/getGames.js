@@ -1,6 +1,5 @@
 const express = require("express");
 const getGames = express.Router();
-const axios = require("axios")
 const { videogame, generos } = require("../db.js");
 const getVideogames = require("./videogames/getVideogames");
 // trae la lista de juegos.
@@ -57,10 +56,10 @@ getGames.get("/", async (req, res) => {
       // Crea la lista de juegos
       return res.status(200).json(games_by_filter);
     }
-    return res.status(200).json(videogames);
 
+    return res.status(200).json(videogames);
   } catch (error) {
-    res.json(error.message);
+    res.json(error );
   }
 });
 

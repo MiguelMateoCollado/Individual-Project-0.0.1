@@ -7,20 +7,18 @@ const fs = require("fs");
 DB_URL = process.env.DB;
 DB_DEPLOY = process.env.DB_DEPLOY;
 
-
-/*
 const database = new Sequelize(DB_URL, {
   logging: false,
   native: false,
 });
 
-*/
 
+/*
 const database = new Sequelize(DB_DEPLOY, {
   logging: false,
   native: false,
 });
-
+*/
 videogameModel(database);
 genresModel(database);
 platformsModel(database);
