@@ -32,7 +32,7 @@ let list = await getGames();
     const GameDetail = {
       name: gameFinded[0].name,
       date: gameFinded[0].released,
-      image: gameFinded[0].image,
+      image: gameFinded[0].background_image,
       rating: gameFinded[0].rating,
       platforms: gameFinded[0].platforms.map(
         (platform) => platform.platform.name
