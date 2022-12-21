@@ -13,7 +13,7 @@ function Details() {
     dispatch(getDetails(id));
   }, [dispatch, id]);
   const myGame = useSelector((state) => state.detail);
- 
+ console.log(myGame);
   return (
     <div>
       <div className={styles.container}>

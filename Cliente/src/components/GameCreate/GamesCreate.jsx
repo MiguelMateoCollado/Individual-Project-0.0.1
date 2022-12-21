@@ -87,6 +87,7 @@ export default function GamesCreate() {
       alert("Ha fallado");
     }
   };
+  
   const handleChange = (e) => {
     setInput({
       ...input,

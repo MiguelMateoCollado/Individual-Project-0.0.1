@@ -4,7 +4,10 @@ import axios from "axios";
 export function getAllGames() {
   return async function (dispatch) {
     try {
-      var json = await axios.get(`https://individual-project-001-production.up.railway.app/videogames`);
+      //var json = await axios.get(`https://individual-project-001-production.up.railway.app/videogames`);
+      var json = await axios.get(
+        `http://localhost:3001/videogames`
+      );
       return dispatch({
         type: "GET_ALL_GAMES",
         payload: json.data,
@@ -19,14 +22,17 @@ export function getAllGames() {
 }
 //Trae todos los juego
 export async function CreateGame(payload) {
-  const create = await axios.post(`https://individual-project-001-production.up.railway.app/create`, {
-    name: payload.name,
-    date: payload.date,
-    image: payload.image,
-    rating: payload.rating,
-    genres: payload.genres,
-    platforms: payload.platforms,
-  });
+  const create = await axios.post(
+    `https://individual-project-001-production.up.railway.app/create`,
+    {
+      name: payload.name,
+      date: payload.date,
+      image: payload.image,
+      rating: payload.rating,
+      genres: payload.genres,
+      platforms: payload.platforms,
+    }
+  );
   console.log(payload);
   return create;
 }
@@ -34,7 +40,9 @@ export async function CreateGame(payload) {
 export function getGenres() {
   return async function (dispatch) {
     try {
-      let genres = await axios.get(`https://individual-project-001-production.up.railway.app/generos`);
+      let genres = await axios.get(
+        `https://individual-project-001-production.up.railway.app/generos`
+      );
       return dispatch({
         type: "GET_GENRES",
         payload: genres.data,
@@ -53,7 +61,9 @@ export function getGenres() {
 export function getPlatforms() {
   return async function (dispatch) {
     try {
-      let platforms = await axios.get(`https://individual-project-001-production.up.railway.app/platforms`);
+      let platforms = await axios.get(
+        `https://individual-project-001-production.up.railway.app/platforms`
+      );
       return dispatch({
         type: "GET_PLATFORMS",
         payload: platforms.data,
@@ -72,7 +82,9 @@ export function getPlatforms() {
 export function getDetails(id) {
   return async function (dispatch) {
     try {
-      var game = await axios.get(`https://individual-project-001-production.up.railway.app/videogames/${id}`);
+      var game = await axios.get(
+        `https://individual-project-001-production.up.railway.app/videogames/${id}`
+      );
       return dispatch({
         type: "GET_DETAILS",
         payload: game.data,
@@ -90,7 +102,10 @@ export function getDetails(id) {
 // Crea el juego en la base de datos
 export async function createGame(payload) {
   try {
-    await axios.post(`https://individual-project-001-production.up.railway.app/create`, payload);
+    await axios.post(
+      `https://individual-project-001-production.up.railway.app/create`,
+      payload
+    );
     return alert("Se a creado el game!");
   } catch (error) {
     throw error;

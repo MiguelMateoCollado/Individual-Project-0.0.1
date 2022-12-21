@@ -36,10 +36,6 @@ function reducer(state = initialState, action) {
       };
     //hace una busqueda dentro del estado
 
-    // Actualiza la pagina actual este funciona para manejar el paginado desde el estado
-
-    // Actualiza la pagina actual este funciona para manejar el paginado desde el estado
-
     // Obtiene todos los generos desde la base de datos
     case "GET_GENRES":
       return {
