@@ -1,4 +1,5 @@
 const express = require("express");
+const fetch = require("node-fetch")
 const { plataformas } = require("../db.js");
 const getplatforms = express.Router();
 // obtiene todos los generos de juegos y los agrega a una tabla

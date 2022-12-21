@@ -1,4 +1,5 @@
 const express = require("express");
+const fetch = require("node-fetch")
 const { generos } = require("../db.js");
 const getgeneros = express.Router();
 // obtiene todos los generos de juegos y los agrega a una tabla

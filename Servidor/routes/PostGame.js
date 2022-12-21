@@ -1,4 +1,5 @@
 const express = require("express");
+const fetch = require("node-fetch")
 const PostGame = express.Router();
 const { videogame, generos, plataformas } = require("../db.js");
 // crea un juego nuevo
