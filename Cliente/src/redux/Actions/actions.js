@@ -6,7 +6,7 @@ export function getAllGames() {
     try {
       //var json = await axios.get(`https://individual-project-001-production.up.railway.app/videogames`);
       var json = await axios.get(
-        `https://servidor-pi-production.up.railway.app//videogames`
+        `https://servidor-pi-production.up.railway.app/videogames`
       );
       return dispatch({
         type: "GET_ALL_GAMES",
