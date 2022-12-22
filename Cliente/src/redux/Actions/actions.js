@@ -6,7 +6,7 @@ export function getAllGames() {
     try {
       //var json = await axios.get(`https://individual-project-001-production.up.railway.app/videogames`);
       var json = await axios.get(
-        `http://localhost:3001/videogames`
+        `https://servidor-pi-production.up.railway.app//videogames`
       );
       return dispatch({
         type: "GET_ALL_GAMES",
@@ -23,7 +23,7 @@ export function getAllGames() {
 //Trae todos los juego
 export async function CreateGame(payload) {
   const create = await axios.post(
-    `https://individual-project-001-production.up.railway.app/create`,
+    `https://servidor-pi-production.up.railway.app/create`,
     {
       name: payload.name,
       date: payload.date,
@@ -41,7 +41,7 @@ export function getGenres() {
   return async function (dispatch) {
     try {
       let genres = await axios.get(
-        `https://individual-project-001-production.up.railway.app/generos`
+        `https://servidor-pi-production.up.railway.app/generos`
       );
       return dispatch({
         type: "GET_GENRES",
@@ -62,7 +62,7 @@ export function getPlatforms() {
   return async function (dispatch) {
     try {
       let platforms = await axios.get(
-        `https://individual-project-001-production.up.railway.app/platforms`
+        `https://servidor-pi-production.up.railway.app/platforms`
       );
       return dispatch({
         type: "GET_PLATFORMS",
@@ -83,7 +83,7 @@ export function getDetails(id) {
   return async function (dispatch) {
     try {
       var game = await axios.get(
-        `https://individual-project-001-production.up.railway.app/videogames/${id}`
+        `https://servidor-pi-production.up.railway.app/videogames/${id}`
       );
       return dispatch({
         type: "GET_DETAILS",
@@ -103,7 +103,7 @@ export function getDetails(id) {
 export async function createGame(payload) {
   try {
     await axios.post(
-      `https://individual-project-001-production.up.railway.app/create`,
+      `https://servidor-pi-production.up.railway.app/create`,
       payload
     );
     return alert("Se a creado el game!");
