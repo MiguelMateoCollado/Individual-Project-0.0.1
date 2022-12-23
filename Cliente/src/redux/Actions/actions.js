@@ -33,8 +33,7 @@ export async function CreateGame(payload) {
       platforms: payload.platforms,
     }
   );
-  console.log(payload);
-  return create;
+  return alert("A sido creado!");
 }
 // Obtiene todos los generos desde la base de datos
 export function getGenres() {
@@ -100,7 +99,7 @@ export function getDetails(id) {
 // Obtiene todos los detalles de un juego
 
 // Crea el juego en la base de datos
-export async function createGame(payload) {
+export async function   createGame(payload) {
   try {
     await axios.post(
       `https://servidor-pi-production.up.railway.app/create`,

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 function Home() {
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllGames());
@@ -24,7 +25,7 @@ function Home() {
   const pagination = (pageNumber) => {
     dispatch(SetCurrentPage(pageNumber));
   };
-
+  console.log("Esta es la pagina actual "  , currentPage)
   return (
     <Container>
       <Grid container justifyContent="center" sx={{ padding: 3 }}>
@@ -44,10 +45,9 @@ function Home() {
         )}
       </Grid>
       <Grid container spacing={2} justifyContent="center">
-        {console.log(currentGames.length)}
-        {
-          currentGames.length !== 0 && currentGames.length !== 1 ? (
-            currentGames.map((game) => {
+        {currentGames.length !== 0 && !currentGames[0].message ? (
+          currentGames.map((game) => {
+            if (typeof game === "object") {
               return (
                 <CardGame
                   id={game.id}
@@ -57,24 +57,17 @@ function Home() {
                   genres={game.generos}
                 />
               );
-            })
-          ) : currentGames.length === 0 ? (
-            restGame.length === 0 ? (
-              <h1>Loading...</h1>
-            ) : (
-              <h1>No hay Juegos!</h1>
-            )
+            }
+          })
+        ) : currentGames.length === 0 ? (
+          restGame.length === 0 ? (
+            <h1>Loading...</h1>
           ) : (
-            <h1>{allGames[0] && allGames[0].message}</h1>
+            <h1>No hay Juegos!</h1>
           )
-          /*
-          <h1>
-            {currentGames.length === 0
-              ? "Loading..."
-              : allGames[0] && allGames[0].message}
-          </h1>
-         */
-        }
+        ) : (
+          <h1>{allGames[0] && allGames[0].message}</h1>
+        )}
       </Grid>
     </Container>
   );

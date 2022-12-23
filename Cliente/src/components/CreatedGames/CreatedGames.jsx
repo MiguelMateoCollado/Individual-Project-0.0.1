@@ -7,19 +7,21 @@ export default function CreatedGames() {
   const [button, setButton] = useState(false);
 
   const created = (e) => {
+    e.preventDefault();
     if (e.target.value === "api") {
       setButton(false);
     }
     dispatch(FilterCreated(e.target.value));
-    refreshPage();
+    dispatch(refreshPage());
   };
 
   const api = (e) => {
+    e.preventDefault();
     if (e.target.value === "creados") {
       setButton(true);
     }
     dispatch(FilterCreated(e.target.value));
-    refreshPage();
+    dispatch(refreshPage());
   };
 
   return (

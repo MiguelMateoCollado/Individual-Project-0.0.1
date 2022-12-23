@@ -42,7 +42,7 @@ PostGame.post("/", async (req, res) => {
 
     newGame.addGeneros(generosDB);
     newGame.addPlataformas(platformsDB);
-    res.status(200).json(newGame);
+    res.status(200).json(newGame)
   } catch (error) {
     res.status(400).send(error.message);
   }

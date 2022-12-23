@@ -6,7 +6,7 @@ import {
   getPlatforms,
   createGame,
 } from "../../redux/Actions/actions";
-
+import { useNavigate } from "react-router-dom";
 import styles from "./GamesCreate.module.css";
 
 export default function GamesCreate() {
@@ -28,6 +28,13 @@ export default function GamesCreate() {
     genres: [],
     platforms: [],
   });
+
+  let navigate = useNavigate();
+
+  async function toHome() {
+    navigate("/");
+  }
+
   useEffect(() => {
     setButton(
       !(
@@ -80,14 +87,17 @@ export default function GamesCreate() {
 
     return errors;
   };
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     try {
+      e.preventDefault();
       await createGame(input);
+      await toHome()
     } catch (error) {
-      alert("Ha fallado");
+      alert(error.message);
+      await toHome()
     }
   };
-  
+
   const handleChange = (e) => {
     setInput({
       ...input,
@@ -100,6 +110,7 @@ export default function GamesCreate() {
       })
     );
   };
+
   const handleCheck = (e) => {
     setInput({
       ...input,
@@ -137,7 +148,7 @@ export default function GamesCreate() {
   return (
     <div>
       <div>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.create} onSubmit={handleSubmit}>
           <div>
             <div>
               <div>
@@ -233,10 +244,10 @@ export default function GamesCreate() {
           >
             Enviar Formulario
           </button>
+          <Link className={styles.botonRetorna} to="/">
+            Volver
+          </Link>
         </form>
-        <Link className={styles.botonRetorna} to="/">
-          Volver
-        </Link>
       </div>
     </div>
   );

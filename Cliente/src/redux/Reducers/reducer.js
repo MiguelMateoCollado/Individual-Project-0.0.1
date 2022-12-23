@@ -54,7 +54,7 @@ function reducer(state = initialState, action) {
 
     // Sortea deacuerdo al nombre desde la Z-A
     case "SORT_REVERSE":
-      const sorted = state.allgames.sort((a, b) => {
+      const sorted = state.games.sort((a, b) => {
         if (a.name > b.name) {
           return -1;
         }
@@ -68,8 +68,9 @@ function reducer(state = initialState, action) {
         games: [...sorted, 1],
       };
     // Sortea deacuerdo al nombre desde la Z-A
+    // Sortea deacuerdo al nombre desde la A-Z
     case "SORT_GAME":
-      const sortedAZ = state.allgames.sort((a, b) => {
+      const sortedAZ = state.games.sort((a, b) => {
         if (a.name > b.name) {
           return 1;
         }
@@ -82,6 +83,7 @@ function reducer(state = initialState, action) {
         ...state,
         games: [...sortedAZ, 1],
       };
+    // Sortea deacuerdo al nombre desde la A-Z
     // Obtiene todos los detalles de un juego
     case "GET_DETAILS":
       return {
