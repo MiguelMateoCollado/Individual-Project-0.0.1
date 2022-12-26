@@ -3,29 +3,39 @@ import InputSearch from "./InputSearch/InputSearch";
 import FilterRating from "./FilterRating/SortByRating";
 import FilterAlfabetic from "./FilterAlfabetic/FilterAlfabetic";
 import CreatedGames from "./CreatedGames/CreatedGames";
-import CreatedLink from "./CreateLink/CreateLink"
+import CreatedLink from "./CreateLink/CreateLink";
 import { Grid } from "@mui/material";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 function Navbar() {
+  const allGames = useSelector((state) => state.games);
+  const [activite, setActivate] = useState(false);
+
+  useEffect(
+    () => (allGames.length === 0 ? setActivate(true) : setActivate(false)),
+    [allGames, setActivate]
+  );
   return (
     <div>
-      <Grid container spacing={1} >
-        <Grid  >
+      <Grid container spacing={1}>
+        <Grid>
           <InputSearch />
         </Grid>
-        <Grid  >
-          <FilterGenres />
+        <Grid>
+          <FilterGenres estado={activite} />
         </Grid>
-        <Grid  >
-          <FilterRating />
+        <Grid>
+          <FilterRating estado={activite} />
         </Grid>
-        <Grid  >
-          <FilterAlfabetic />
+        <Grid>
+          <FilterAlfabetic estado={activite} />
         </Grid>
-        <Grid >
+        <Grid>
           <CreatedGames />
         </Grid>
-        <Grid  >
-          <CreatedLink/>
+        <Grid>
+          <CreatedLink />
         </Grid>
       </Grid>
     </div>

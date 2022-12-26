@@ -1,20 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import styles from "./pagination.module.css";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 export default function Pagination({ gamePerPage, allGames, pagination }) {
   const currentPage = useSelector((state) => state.currentPage);
   const pageNumbers = [];
+
   for (let i = 1; i <= Math.ceil(allGames / gamePerPage); i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers.length);
+
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    pageNumbers.length === 0 ? setVisible(true) : setVisible(false);
+  }, [pageNumbers]);
+  console.log(currentPage);
   return (
     <div className={styles.container}>
       <nav>
         <ul className={styles.navbar}>
-          <li>
+          <li hidden={visible}>
             {currentPage - 1 < 1 ? (
-              <span> &laquo; </span>
+              <span className={styles.span}> &laquo; </span>
             ) : (
               <a
                 className={styles.item}
@@ -26,14 +33,19 @@ export default function Pagination({ gamePerPage, allGames, pagination }) {
           </li>
           {pageNumbers?.map((number, index) => (
             <li key={index}>
-              <a className={styles.item} onClick={() => pagination(number)}>
+              <a
+                className={
+                  currentPage === index + 1 ? styles.color : styles.item
+                }
+                onClick={() => pagination(number)}
+              >
                 {number}
               </a>
             </li>
           ))}
-          <li>
-            {currentPage + 1 > pageNumbers.length ? (
-              <span> &raquo; </span>
+          <li hidden={visible}>
+            {currentPage === pageNumbers.length ? (
+              <span className={styles.span}> &raquo; </span>
             ) : (
               <a
                 className={styles.item}

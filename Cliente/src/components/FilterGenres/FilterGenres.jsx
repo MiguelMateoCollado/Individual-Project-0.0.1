@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./FilterGenres.module.css";
 import { FiltrarGeneros, refreshPage } from "../../redux/Actions/actions";
 import { useDispatch } from "react-redux";
-export default function FilterGenres() {
-  
+export default function FilterGenres({ estado }) {
   let dispatch = useDispatch();
   const handleChange = (e) => {
     dispatch(FiltrarGeneros(e.target.value));
@@ -12,7 +11,13 @@ export default function FilterGenres() {
 
   return (
     <div>
-      <select name="generos" id="generos" className={styles.selecter} onChange={(e) => handleChange(e)}>
+      <select
+        name="generos"
+        id="generos"
+        disabled={estado}
+        className={styles.selecter}
+        onChange={(e) => handleChange(e)}
+      >
         <option value="Todos">Todos</option>
         <option value="Adventure">Adventure</option>
         <option value="Action">Action</option>

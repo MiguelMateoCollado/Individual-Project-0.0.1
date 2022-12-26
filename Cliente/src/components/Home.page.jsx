@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 function Home() {
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getAllGames());
   }, [dispatch]);
@@ -25,24 +25,16 @@ function Home() {
   const pagination = (pageNumber) => {
     dispatch(SetCurrentPage(pageNumber));
   };
-  console.log("Esta es la pagina actual "  , currentPage)
+
   return (
     <Container>
       <Grid container justifyContent="center" sx={{ padding: 3 }}>
         <Navbar />
-        {currentGames.length > 1 ? (
-          <Pagination
-            gamePerPage={gamePerPage}
-            allGames={allGames.length}
-            pagination={pagination}
-          />
-        ) : (
-          <Pagination
-            gamePerPage={gamePerPage}
-            allGames={0}
-            pagination={pagination}
-          />
-        )}
+        <Pagination
+          gamePerPage={gamePerPage}
+          allGames={allGames.length}
+          pagination={pagination}
+        />
       </Grid>
       <Grid container spacing={2} justifyContent="center">
         {currentGames.length !== 0 && !currentGames[0].message ? (
