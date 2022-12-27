@@ -126,3 +126,38 @@
   box-shadow: 0.2em 0.2em white;
   transition: 0.1s;
 }
+
+.switcher {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+ 
+  border-radius: 25px;
+  margin: 20px 0 0 0;
+}
+div.switcher {
+  margin-inline: 10px;
+}
+.switcherLabel {
+  cursor: pointer;
+  position: absolute;
+  font-weight: 500;
+  margin: 35px 0 0 20px ;
+  margin-right: 25px;
+  color: rgb(255, 255, 255);
+}
+.switcher input {
+  cursor: pointer;
+ 
+  appearance: none;
+  border-radius: 25px;
+}
+
+div.switcher input:not(:checked) {
+  transition: 300ms;
+  background: #6b6b6b;
+}
+div.switcher input:checked {
+  transition: 300ms;
+  background: #8af380;
+}

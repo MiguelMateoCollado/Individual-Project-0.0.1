@@ -18,7 +18,7 @@ function Navbar() {
   );
   return (
     <div>
-      <Grid container spacing={1}>
+      <Grid container>
         <Grid>
           <InputSearch />
         </Grid>
@@ -34,7 +34,7 @@ function Navbar() {
         <Grid>
           <CreatedGames />
         </Grid>
-        <Grid>
+        <Grid sx={{ marginTop: 1.5 }}>
           <CreatedLink />
         </Grid>
       </Grid>

@@ -91,10 +91,10 @@ export default function GamesCreate() {
     try {
       e.preventDefault();
       await createGame(input);
-      await toHome()
+      await toHome();
     } catch (error) {
       alert(error.message);
-      await toHome()
+      await toHome();
     }
   };
 
@@ -127,7 +127,8 @@ export default function GamesCreate() {
       })
     );
   };
-
+  console.log(input.genres);
+  console.log(input.platforms);
   const handleCheckPlatforms = (e) => {
     setInput({
       ...input,
@@ -202,18 +203,17 @@ export default function GamesCreate() {
           <h3 className={styles.genres}>genres</h3>
           {genres?.map((gen) => {
             return (
-              <div key={gen.id} className={styles.items}>
-                <div>
-                  <label>{gen.name}</label>
-                  <input
-                    onChange={(e) => handleCheck(e)}
-                    type="checkbox"
-                    className={styles.check}
-                    name={gen.name}
-                    value={gen.name}
-                    id={gen.id}
-                  />
-                </div>
+              <div className={styles.switcher}>
+                <label className={styles.switcherLabel} for={gen.name}>
+                  {gen.name}
+                </label>
+                <input
+                  onChange={(e) => handleCheck(e)}
+                  className={styles.switcher}
+                  type="checkbox"
+                  value={gen.name}
+                  id={gen.name}
+                />
               </div>
             );
           })}
@@ -221,18 +221,17 @@ export default function GamesCreate() {
           <h3>Plataformas</h3>
           {platforms?.map((plat) => {
             return (
-              <div key={plat.id} className={styles.items}>
-                <div>
-                  <label>{plat.name}</label>
-                  <input
-                    onChange={(e) => handleCheckPlatforms(e)}
-                    type="checkbox"
-                    className={styles.check}
-                    name={plat.name}
-                    value={plat.name}
-                    id={plat.id}
-                  />
-                </div>
+              <div className={styles.switcher}>
+                <label className={styles.switcherLabel} for={plat.name}>
+                  {plat.name}
+                </label>
+                <input
+                  onChange={(e) => handleCheckPlatforms(e)}
+                  className={styles.switcher}
+                  type="checkbox"
+                  value={plat.name}
+                  id={plat.name}
+                />
               </div>
             );
           })}

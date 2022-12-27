@@ -1,6 +1,6 @@
 .selecter {
   cursor: pointer;
-  background: #fb2a1f;
+  background: #91D8E4;
   color: white;
   font-family: inherit;
   padding: 0.6em 1em;
@@ -19,7 +19,7 @@
 }
 
 .selecter:hover {
-  background: rgb(183, 10, 10);
+  background: #55b7c9;
   transform: translate(-0.05em, -0.05em);
   box-shadow: 0.15em 0.15em rgb(220, 220, 220);
 }
