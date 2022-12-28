@@ -1,139 +1,55 @@
-.create {
-  padding: 0.6em 1.3em;
-  width: auto;
-  height: auto;
-  padding: 5%;
-  margin: 100px 100px 230px 100px;
-  background: rgb(219, 34, 34);
-  border-radius: 70px;
-  border: 15px solid rgb(249, 247, 247);
-  box-shadow: 1em 1em rgb(181, 181, 181);
-}
-
-.botons {
+.container {
+  
+  justify-content: start;
   display: flex;
-  flex-direction: row;
+  margin: 1rem;
+  border: solid;
+  box-shadow: 10px;
+  width: 650px;
+  flex-wrap: wrap;
+  border-color: rgb(219, 5, 87);
+  padding-top: 1rem;
+  padding: 2rem;
+  box-shadow: 0.5rem 0.5rem rgb(219, 5, 87);
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-left: 17rem;
 }
 
-.botons1 {
-  display: flex;
-  flex-direction: row;
+.container input {
+  width: 15rem;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: rgb(199, 199, 199);
+  border-radius: 0.3rem;
+  padding: 0.1rem;
+  height: 2rem;
+  padding-left: 0.4rem;
 }
 
-.input {
-  margin-left: 15px;
-  border-radius: 5px;
-  border: none;
-  width: 755px;
-  padding: 5px;
-  height: 25px;
-}
-.inputImg {
-  margin-left: 10px;
-  border-radius: 5px;
-  border: none;
-  width: 750px;
-  padding: 5px;
-  height: 25px;
-}
-.inputRating {
-  width: 100px;
-  border: none;
-  height: 25px;
-  padding: 5px;
-}
-.inputDate {
-  width: 250px;
-  font-size: 20px;
-  border: none;
-  height: 35px;
-  padding: 5px;
+.item {
+  align-self: center;
+  margin-left: 1.5rem;
 }
 
-.alert {
-  color: black;
-}
-.textArea {
-  width: 500;
-}
-.genres {
-  font-size: 25px;
-}
-.items {
-  font-size: 20px;
-  margin: 15px;
-  display: inline-grid;
-  grid-template-columns: 50px 50px 50px 50px 50px;
-  grid-template-rows: 25px 25px 25px;
-  gap: 3px 10px;
-  grid-template-areas:
-    ". . . . . ."
-    ". . . . . ."
-    ". . . . . .";
-}
-.check {
+.item p {
+  color: red;
+  font-weight: 500;
   margin-top: 10px;
-  margin-bottom: 10px;
-  width: 25px;
-  height: 25px;
+  padding: 0;
 }
 
-.botonSubmit {
-  cursor: pointer;
-  background: #c10909;
-  color: white;
-  text-decoration: none;
-  margin-bottom: 25px;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 2px solid rgb(249, 247, 247);
-  border-radius: 0.4em;
-  box-shadow: 0.2em 0.2em white;
-  transition: 0.1s;
-}
-
-.botonSubmit:disabled {
-  cursor: pointer;
-  background: #0981c1;
-  color: white;
-  text-decoration: none;
-  margin-bottom: 25px;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 2px solid rgb(249, 247, 247);
-  border-radius: 0.4em;
-  box-shadow: 0.2em 0.2em white;
-  transition: 0.1s;
-}
-
-.botonRetorna {
-  cursor: pointer;
-  background: #941600;
-  color: white;
-  text-decoration: none;
-  margin-bottom: 25px;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  margin-left: 10px;
-  font-weight: 900;
-  font-size: 18px;
-  border: 2px solid rgb(249, 247, 247);
-  border-radius: 0.4em;
-  box-shadow: 0.2em 0.2em white;
-  transition: 0.1s;
+.genres {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
 }
 
 .switcher {
   display: inline-block;
-  width: 200px;
-  height: 50px;
- 
+  height: 30px;
   border-radius: 25px;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
 }
 div.switcher {
   margin-inline: 10px;
@@ -142,22 +58,70 @@ div.switcher {
   cursor: pointer;
   position: absolute;
   font-weight: 500;
-  margin: 35px 0 0 20px ;
+  margin: 20px 0 0 15px;
   margin-right: 25px;
   color: rgb(255, 255, 255);
 }
 .switcher input {
+  padding: 17px;
+  width: 185px;
   cursor: pointer;
- 
   appearance: none;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 div.switcher input:not(:checked) {
   transition: 300ms;
-  background: #6b6b6b;
+  background: #c5c5c5;
 }
 div.switcher input:checked {
   transition: 300ms;
-  background: #8af380;
+  background: #ee364e;
+  border-color: #ee364e;
+}
+
+.botonSubmit {
+  border-color: rgb(221, 32, 105);
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 25px;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  background: white;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0.2em 0.2em rgb(221, 32, 105);
+  transition: 0.1s;
+}
+
+.botonSubmit:disabled {
+  border-color: rgb(32, 136, 221);
+  border: none;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 25px;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  background: white;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0.2em 0.2em rgb(32, 136, 221);
+  transition: 0.1s;
+}
+
+.botonRetorna {
+  margin-left: 20px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 25px;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  background: white;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0.2em 0.2em rgb(221, 32, 64);
+  transition: 0.1s;
 }

@@ -41,6 +41,7 @@ export default function GamesCreate() {
         input.name &&
         input.date &&
         input.rating > 0 &&
+        input.rating <= 5 &&
         input.genres.length > 0 &&
         input.platforms.length > 0
       )
@@ -84,7 +85,9 @@ export default function GamesCreate() {
         image: "",
       });
     }
-
+    if (input.rating > 5) {
+      errors.rating = "Es superior al margen de rating";
+    }
     return errors;
   };
   const handleSubmit = async (e) => {
@@ -127,8 +130,6 @@ export default function GamesCreate() {
       })
     );
   };
-  console.log(input.genres);
-  console.log(input.platforms);
   const handleCheckPlatforms = (e) => {
     setInput({
       ...input,
@@ -148,48 +149,53 @@ export default function GamesCreate() {
 
   return (
     <div>
-      <div>
-        <form className={styles.create} onSubmit={handleSubmit}>
-          <div>
-            <div>
-              <div>
-                <label htmlFor="">Name</label>
-                <input
-                  type="text"
-                  placeholder="Insert Name"
-                  onChange={(e) => handleChange(e)}
-                  name="name"
-                  value={input.name}
-                  className={styles.input}
-                />
-                {<p className={styles.alert}>{errors.name}</p>}
-              </div>
+      {genres.length === 0 && platforms.length === 0 ? (
+        <div className={styles.container}>
+          <h1>Loading...</h1>
+        </div>
+      ) : (
+        <form action="" onSubmit={handleSubmit}>
+          <div className={styles.container}>
+            <div className={styles.item}>
+              <h3>Insert Name</h3>
+              <input
+                type="text"
+                placeholder="Insert Name"
+                onChange={(e) => handleChange(e)}
+                name="name"
+                value={input.name}
+                className={styles.input}
+              />
+              {<p className={styles.alert}>{errors.name}</p>}
             </div>
-            <div>
-              <div>
-                <label>Image</label>
-                <input
-                  type="text"
-                  name="image"
-                  placeholder="Inserte URL..."
-                  className={styles.inputImg}
-                  value={input.image}
-                  onChange={(e) => handleChange(e)}
-                />
-                {<p className={styles.alert}>{errors.image}</p>}
-              </div>
-              <label>Rating</label>
+            <div className={styles.item}>
+              <h3>Insert Image</h3>
+              <input
+                type="text"
+                placeholder="Inserte URL..."
+                onChange={(e) => handleChange(e)}
+                name="image"
+                value={input.image}
+                className={styles.input}
+              />
+              {<p className={styles.alert}>{errors.image}</p>}
+            </div>
+
+            <div className={styles.item}>
+              <h3>Insert Rating</h3>
               <input
                 type="number"
                 name="rating"
                 min="0"
-                max="100"
+                max="5"
                 onChange={(e) => handleChange(e)}
                 className={styles.inputRating}
                 value={input.rating}
               />
               {<p>{errors.rating}</p>}
-              <label>Fecha</label> <br />
+            </div>
+            <div className={styles.item}>
+              <h3>Fecha</h3>
               <input
                 type="date"
                 name="date"
@@ -199,59 +205,61 @@ export default function GamesCreate() {
               />
               {<p className={styles.alert}>{errors.date}</p>}
             </div>
+            <div className={styles.item}>
+              <h3 className={styles.genres}>genres</h3>
+              {genres?.map((gen) => {
+                return (
+                  <div className={styles.switcher}>
+                    <label className={styles.switcherLabel} for={gen.name}>
+                      {gen.name}
+                    </label>
+                    <input
+                      onChange={(e) => handleCheck(e)}
+                      className={styles.switcher}
+                      type="checkbox"
+                      value={gen.name}
+                      id={gen.name}
+                    />
+                  </div>
+                );
+              })}
+              {<p className={styles.alert}>{errors.genres}</p>}
+            </div>
+            <div className={styles.item}>
+              <h3 className={styles.genres}>Plataformas</h3>
+              {platforms.map((plat) => {
+                return (
+                  <div className={styles.switcher}>
+                    <label className={styles.switcherLabel} for={plat.name}>
+                      {plat.name}
+                    </label>
+                    <input
+                      onChange={(e) => handleCheckPlatforms(e)}
+                      className={styles.switcher}
+                      type="checkbox"
+                      value={plat.name}
+                      id={plat.name}
+                    />
+                  </div>
+                );
+              })}
+              {<p className={styles.alert}>{errors.platforms}</p>}
+            </div>
+            <div className={styles.item}>
+              <button
+                className={styles.botonSubmit}
+                disabled={button}
+                type="Submit"
+              >
+                Enviar Formulario
+              </button>
+              <Link className={styles.botonRetorna} to="/">
+                Volver
+              </Link>
+            </div>
           </div>
-          <h3 className={styles.genres}>genres</h3>
-          {genres?.map((gen) => {
-            return (
-              <div className={styles.switcher}>
-                <label className={styles.switcherLabel} for={gen.name}>
-                  {gen.name}
-                </label>
-                <input
-                  onChange={(e) => handleCheck(e)}
-                  className={styles.switcher}
-                  type="checkbox"
-                  value={gen.name}
-                  id={gen.name}
-                />
-              </div>
-            );
-          })}
-          {<p className={styles.alert}>{errors.genres}</p>}
-          <h3>Plataformas</h3>
-          {platforms?.map((plat) => {
-            return (
-              <div className={styles.switcher}>
-                <label className={styles.switcherLabel} for={plat.name}>
-                  {plat.name}
-                </label>
-                <input
-                  onChange={(e) => handleCheckPlatforms(e)}
-                  className={styles.switcher}
-                  type="checkbox"
-                  value={plat.name}
-                  id={plat.name}
-                />
-              </div>
-            );
-          })}
-          {<p className={styles.alert}>{errors.platforms}</p>}
-          <button
-            className={styles.botonSubmit}
-            disabled={button}
-            type="Submit"
-          >
-            Enviar Formulario
-          </button>
-          <Link className={styles.botonRetorna} to="/">
-            Volver
-          </Link>
         </form>
-      </div>
+      )}
     </div>
   );
 }
-
-/*
-
-*/

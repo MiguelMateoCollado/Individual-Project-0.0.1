@@ -4,15 +4,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import "./CardGame.css";
 import Link from "@mui/material/Link";
-
+import styles from "./CardGame.module.css"
 function CardGame({ genres, name, id, image }) {
   return (
     <Grid item xs={3.3}>
       <CardActionArea>
         <Link underline="none" href={`/${id}`}>
-          <Card sx={{ width: 300, height: 300 ,marginBottom: 2 }} >
+          <Card className={styles.cartas} sx={{ width: 300, height: 300 ,marginBottom: 2 }} >
             <CardMedia
               component="img"
               height="180"
