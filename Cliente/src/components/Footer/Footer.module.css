@@ -80,6 +80,15 @@ ion-icon {
   text-decoration: none;
 }
 .icons:hover {
-  color: rgb(255, 62, 62);
+  color: rgb(245, 77, 77);
   transition: 220ms;
 }
+.icons2 {
+  color: white;
+  text-decoration: none;
+}
+.icons2:hover {
+  color: rgb(62, 226, 255);
+  transition: 220ms;
+}
+

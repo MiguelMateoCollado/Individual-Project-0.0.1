@@ -24,19 +24,23 @@ function Footer() {
           <div className={styles.line}></div>
         </div>
         <div>
-          <Link
+          <a
             className={styles.icons}
             href="https://www.linkedin.com/in/miguelmateojs/"
           >
             <ion-icon name="logo-linkedin"></ion-icon>
-          </Link>
-          <Link
+          </a>
+          <a
             className={styles.icons}
             href="https://github.com/MiguelMateoCollado"
           >
             <ion-icon name="logo-github"></ion-icon>
-          </Link>
+          </a>
+          <span className={styles.icons2}>
+            <ion-icon name="mail"></ion-icon>
+          </span>
         </div>
+        <span>miguelamc258@gmail.com</span>
       </div>
       <div className={styles.atribute}>
         <h3>SKILLS</h3>
