@@ -26,7 +26,7 @@
 }
 
 .container .card:hover .body_card {
-  height: 43%;
+  height: 47%;
 }
 
 .container .card:hover .img {
@@ -39,11 +39,11 @@
   background: #ddd;
   position: absolute;
   top: 0;
-  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
-  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
-  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
-  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
-  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }
 
 .container .card .headerCard .img {
