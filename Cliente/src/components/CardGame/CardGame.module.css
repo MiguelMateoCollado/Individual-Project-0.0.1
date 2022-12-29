@@ -1,5 +1,87 @@
-.cartas {
-    border-style: solid;
-    border-color: rgb(255, 208, 0);
-    box-shadow: 0.3rem 0.3rem rgb(255, 208, 0);
+.container {
+  width: 325px;
+  height: 425px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  color: #5e5e5e;
+  border-style: solid;
+  border-color: rgb(224, 73, 73);
+  box-shadow: 0.5rem 0.5rem rgb(224, 73, 73);
+  width: 325px;
+  height: 425px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .card:hover .headerCard {
+  margin-top: -5px;
+}
+
+.container .card:hover .body_card {
+  height: 43%;
+}
+
+.container .card:hover .img {
+  transform: translatey(-10px) translatex(-5px) scale(1.05);
+}
+
+.container .card .headerCard {
+  width: 150%;
+  height: 125%;
+  background: #ddd;
+  position: absolute;
+  top: 0;
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 220ms;
+}
+
+.container .card .headerCard .img {
+  width: 100%;
+ 
+  height: auto;
+  transition: ease-in-out 600ms;
+}
+
+.container .card .body_card {
+  width: 100%;
+  height: 40%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  cursor: pointer;
+}
+.container .card .body_card .card_content {
+  width: 80%;
+  height: 50%;
+  background: #fff;
+  position: relative;
+}
+.container .card .body_card .card_content .name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.container .card .body_card .card_content .genres {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(231, 99, 99);
 }

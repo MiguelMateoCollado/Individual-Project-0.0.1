@@ -36,7 +36,7 @@ function Home() {
           pagination={pagination}
         />
       </Grid>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={4} justifyContent="center">
         {currentGames.length !== 0 && !currentGames[0].message ? (
           currentGames.map((game) => {
             if (typeof game === "object") {

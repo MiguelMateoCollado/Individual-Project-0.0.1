@@ -5,41 +5,47 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import styles from "./CardGame.module.css"
+import styles from "./CardGame.module.css";
 function CardGame({ genres, name, id, image }) {
   return (
-    <Grid item xs={3.3}>
-      <CardActionArea>
-        <Link underline="none" href={`/${id}`}>
-          <Card className={styles.cartas} sx={{ width: 300, height: 300 ,marginBottom: 2 }} >
-            <CardMedia
-              component="img"
-              height="180"
-              image={image}
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h6"
-                justifyContent="center"
-                component="div"
-              >
-                {name}
-              </Typography>
-              <Grid container justifyContent="center">
-                {genres.map((gen) => (
-                  <Grid key={gen} item xs="auto">
-                    <Typography variant="subtitle1" color="text-secondary">
-                      {gen + " | "}
-                    </Typography>
-                  </Grid>
-                ))}
-              </Grid>
-            </CardContent>
-          </Card>
-        </Link>
-      </CardActionArea>
+    <Grid item xs={4}>
+      <Link underline="none" color="primary"  href={`/${id}`}>
+        <div className={styles.container}>
+          <div className={styles.card}>
+            <div className={styles.headerCard}>
+              <CardMedia
+                className={styles.img}
+                component="img"
+                height="180"
+                image={image}
+                alt="green iguana"
+              />
+            </div>
+            <div className={styles.body_card}>
+              <div className={styles.card_content}>
+                <Typography
+                  className={styles.name}
+                  gutterBottom
+                  variant="h6"
+                  justifyContent="center"
+                  component="div"
+                >
+                  {name}
+                </Typography>
+                <Grid container justifyContent="center">
+                  {genres.map((gen) => (
+                    <Grid key={gen} item xs="auto">
+                      <Typography className={styles.genres} variant="subtitle1" color="text-secondary">
+                        {gen + " | "}
+                      </Typography>
+                    </Grid>
+                  ))}
+                </Grid>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Link>
     </Grid>
   );
 }

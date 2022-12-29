@@ -88,6 +88,9 @@ export default function GamesCreate() {
     if (input.rating > 5) {
       errors.rating = "Es superior al margen de rating";
     }
+    if (input.rating <= 0) {
+      errors.rating = "Ingresa un rating mayor a 0";
+    }
     return errors;
   };
   const handleSubmit = async (e) => {
@@ -100,7 +103,7 @@ export default function GamesCreate() {
       await toHome();
     }
   };
-
+  console.log(input.rating);
   const handleChange = (e) => {
     setInput({
       ...input,
@@ -113,6 +116,8 @@ export default function GamesCreate() {
       })
     );
   };
+
+
 
   const handleCheck = (e) => {
     setInput({
@@ -130,6 +135,7 @@ export default function GamesCreate() {
       })
     );
   };
+
   const handleCheckPlatforms = (e) => {
     setInput({
       ...input,
