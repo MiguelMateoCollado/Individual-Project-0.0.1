@@ -2,10 +2,11 @@ footer {
   position: static;
   display: flex;
   width: auto;
+  justify-content: center;
   margin-top: 5%;
   height: 24rem;
   background: #000;
-  padding: 2rem 2rem 2rem;
+  padding: 2rem 1rem 2rem 4rem;
   font-family: "Poppins", sans-serif;
   color: aliceblue;
 }

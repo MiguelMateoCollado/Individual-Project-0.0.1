@@ -64,7 +64,7 @@ function Home() {
           )}
         </Grid>
       </Container>
-      <Footer></Footer>
+      {currentGames.length !== 0 && !currentGames[0].message && <Footer></Footer>}
     </div>
   );
 }
