@@ -18,7 +18,7 @@ function Navbar() {
     [allGames, setActivate]
   );
   return (
-    <div>
+    <div className={styles.navbar}>
       <Grid container >
         <Grid>
           <InputSearch />

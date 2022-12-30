@@ -67,12 +67,12 @@ function Home() {
               )}
             </Grid>
           </Container>
-         
+          <Footer></Footer>
         </div>
       ) : (
         <Loader></Loader>
       )}
-       <Footer></Footer>
+     
     </div>
   );
 }
