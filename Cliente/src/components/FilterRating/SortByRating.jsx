@@ -6,7 +6,7 @@ import {
   SortRatingLow,
 } from "../../redux/Actions/actions";
 import styles from "./SortByRating.module.css";
-export default function SortByRating({ estado }) {
+export default function SortByRating({ estado, css }) {
   const [button, setButton] = useState(false);
   const dispatch = useDispatch();
 
@@ -24,11 +24,11 @@ export default function SortByRating({ estado }) {
   return (
     <div>
       {button === false ? (
-        <button className={styles.sort} disabled={estado} onClick={sortHigh}>
+        <button className={css} disabled={estado} onClick={sortHigh}>
           Rating ↑
         </button>
       ) : (
-        <button className={styles.sort} value="lower" disabled={estado} onClick={sortLow}>
+        <button className={css} value="lower" disabled={estado} onClick={sortLow}>
           Rating ↓
         </button>
       )}

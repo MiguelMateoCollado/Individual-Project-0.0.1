@@ -1,40 +1,83 @@
-
 .container {
-    display: grid;
-    align-content: center;
-    width: 750px;
-    height: auto;
-    padding: 5%;
-    padding-right: 1%;
-    margin: 20px 0px 50px 190px;
-    background: rgb(219, 34, 34);
-    border-radius: 70px;
-    border: 15px solid rgb(249, 247, 247);
-    box-shadow: 1em 1em rgb(181, 181, 181);
+  font-family: 'Poppins', sans-serif;
+  width: auto;
+  margin: 5% 2% 5% 18%;
+  height: auto;
+  display: flex;
+  
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  
+}
+.card {
+  color: #5e5e5e;
+  border-style: solid;
+  border-color: rgb(224, 73, 73);
+  box-shadow: 0.5rem 0.5rem rgb(224, 73, 73);
+  width: 750px;
+  height: 1100px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 5%;
+  margin-bottom: 50px;
 }
 
-.alfa {
-    cursor: pointer;
-    background: #fb2a1f;
-    color: white;
-    font-family: inherit;
-    padding: 0.6em 1.3em;
-    font-weight: 900;
-    font-size: 18px;
-    border: 2px solid rgb(249, 247, 247);
-    border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em white;
-    transition: 0.10s;
-  }
-  
-  .alfa:hover {
-    background: rgb(183, 10, 10);
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em rgb(220, 220, 220);
-  }
-  
-  .alfa:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.07em 0.07em white;
-  }
-  
+.container .card .headerCard {
+  width: 150%;
+  height: 125%;
+  position: absolute;
+ 
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+}
+
+.headerCard h1 {
+  margin: 2%;
+  color: crimson;
+}
+.headerCard h3 {
+  margin: 2%;
+  font-size: 100%;
+  letter-spacing: 1;
+}
+.headerCard h2 {
+  margin: 2%;
+  color: rgb(201, 22, 37);
+}
+.container .card .headerCard .img {
+  width: 70%;
+  height: 45%;
+  transition: ease-in-out 600ms;
+}
+.botonRetorna {
+  margin-left: 20px;
+  cursor: pointer;
+  color: crimson;
+  border: none;
+  text-decoration: none;
+  margin-bottom: 25px;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  background: white;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0.2em 0.2em rgb(221, 32, 64);
+  transition: 0.1s;
+}
+.botonRetorna:hover {
+  border-style: solid;
+  border-color: crimson;
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+}

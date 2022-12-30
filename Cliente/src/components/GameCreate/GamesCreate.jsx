@@ -8,6 +8,7 @@ import {
 } from "../../redux/Actions/actions";
 import { useNavigate } from "react-router-dom";
 import styles from "./GamesCreate.module.css";
+import Loader from "../Loader/Loader";
 
 export default function GamesCreate() {
   const dispatch = useDispatch();
@@ -156,9 +157,7 @@ export default function GamesCreate() {
   return (
     <div>
       {genres.length === 0 && platforms.length === 0 ? (
-        <div className={styles.container}>
-          <h1>Loading...</h1>
-        </div>
+       <Loader/>
       ) : (
         <form action="" onSubmit={handleSubmit}>
           <div className={styles.container}>
@@ -259,7 +258,7 @@ export default function GamesCreate() {
               >
                 Enviar Formulario
               </button>
-              <Link className={styles.botonRetorna} to="/">
+              <Link className={styles.boton} to="/">
                 Volver
               </Link>
             </div>

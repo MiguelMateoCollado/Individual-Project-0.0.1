@@ -1,28 +1,22 @@
-.sort {
+.boton {
   cursor: pointer;
-  background: #fb2a1f;
-  color: white;
+  color: crimson;
+  border: none;
+  text-decoration: none;
   font-family: inherit;
-  padding: 0.6em 0.7em;
+  padding: 0.6em 1.3em;
+  background: white;
   font-weight: 900;
   font-size: 18px;
-  border: 2px solid rgb(249, 247, 247);
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em white;
+  box-shadow: 0.2em 0.2em rgb(221, 32, 64);
   transition: 0.1s;
 }
-
-.sort:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.07em 0.07em white;
-}
-
-.sort:hover {
-  background: rgb(183, 10, 10);
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em rgb(220, 220, 220);
-}
-
-.sort:disabled {
-  background: cadetblue;
+.boton:hover {
+  border-style: solid;
+  border-color: crimson;
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }

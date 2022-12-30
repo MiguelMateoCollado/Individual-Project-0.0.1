@@ -2,12 +2,12 @@
 import { Link } from "@mui/material";
 import Styles from "./CreateLink.module.css";
 
-function CreateLink() {
+function CreateLink({css}) {
   return (
     <Link
       color="none"
       underline="none"
-      className={Styles.selecter}
+      className={Styles.boton}
       href="/create"
     >
       Create

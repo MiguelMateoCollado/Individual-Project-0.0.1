@@ -1,8 +1,5 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import styles from "./CardGame.module.css";
@@ -16,7 +13,6 @@ function CardGame({ genres, name, id, image }) {
               <CardMedia
                 className={styles.img}
                 component="img"
-                height="180"
                 image={image}
                 alt="green iguana"
               />

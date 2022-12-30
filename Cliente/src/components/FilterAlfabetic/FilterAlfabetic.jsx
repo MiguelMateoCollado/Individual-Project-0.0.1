@@ -8,7 +8,7 @@ import {
 import { useDispatch } from "react-redux";
 
 
-export default function FilterAlfabetic({ estado }) {
+export default function FilterAlfabetic({ estado, css }) {
   const [button, setButton] = useState(false);
   const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ export default function FilterAlfabetic({ estado }) {
     <div>
       {button === true ? (
         <button
-          className={styles.alfa}
+          className={css}
           value="initial"
           disabled={estado}
           onClick={SortGames2}
@@ -37,7 +37,7 @@ export default function FilterAlfabetic({ estado }) {
         </button>
       ) : (
         <button
-          className={styles.alfa}
+          className={css}
           disabled={estado}
           value="reverse"
           onClick={SortGames1}

@@ -155,7 +155,7 @@ function reducer(state = initialState, action) {
     // filtra por medio del genero
     case "FILTER_BY_GENRES":
       let filterByGen;
-      if (action.payload !== "Todos") {
+      if (action.payload !== "All Games") {
         filterByGen = state.allgames.filter((game) => {
           if (game.generos.includes(action.payload)) {
             return game;

@@ -2,6 +2,7 @@
   cursor: pointer;
   color: crimson;
   border: none;
+  margin-inline: 10px;
   text-decoration: none;
   font-family: inherit;
   padding: 0.6em 1.3em;
@@ -10,14 +11,10 @@
   font-size: 18px;
   box-shadow: 0.2em 0.2em rgb(221, 32, 64);
   transition: 0.1s;
-  border-style: solid;
-  border-color: crimson;
-  border-width: 2px;
 }
 .boton:hover {
   border-style: solid;
   border-color: crimson;
-  border-width: 3px;
   -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
