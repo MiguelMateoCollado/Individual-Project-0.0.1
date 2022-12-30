@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
+import Styles from "./Home.module.css"
 function Home() {
   const dispatch = useDispatch();
 
@@ -31,7 +32,7 @@ function Home() {
   return (
     <div>
       {restGame.length !== 0 && !restGame[0].message ? (
-        <div >
+        <div>
           <Container>
             <Grid container justifyContent="center">
               <Navbar />
@@ -60,7 +61,9 @@ function Home() {
                 restGame.length === 0 ? (
                   <h1>Loading...</h1>
                 ) : (
-                  <h1>No hay Juegos!</h1>
+                  <div className={Styles.home}>
+                    <h1>No hay Juegos!</h1>
+                  </div>
                 )
               ) : (
                 <h1>{allGames[0] && allGames[0].message}</h1>
@@ -72,7 +75,6 @@ function Home() {
       ) : (
         <Loader></Loader>
       )}
-     
     </div>
   );
 }
