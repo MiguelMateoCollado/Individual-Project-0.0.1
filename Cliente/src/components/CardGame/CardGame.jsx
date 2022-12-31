@@ -1,12 +1,15 @@
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
+
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/esm/Row";
 import styles from "./CardGame.module.css";
+import Stack from "react-bootstrap/esm/Stack";
 function CardGame({ genres, name, id, image }) {
   return (
-    <Grid item xs={4}>
-      <Link underline="none" color="primary"  href={`/${id}`}>
+    <Row>
+      <Link to={`/${id}`}>
         <div className={styles.container}>
           <div className={styles.card}>
             <div className={styles.headerCard}>
@@ -19,7 +22,7 @@ function CardGame({ genres, name, id, image }) {
             </div>
             <div className={styles.body_card}>
               <div className={styles.card_content}>
-                <Typography
+                <p
                   className={styles.name}
                   gutterBottom
                   variant="h6"
@@ -27,22 +30,20 @@ function CardGame({ genres, name, id, image }) {
                   component="div"
                 >
                   {name}
-                </Typography>
-                <Grid container justifyContent="center">
+                </p>
+                <Row direction="horizontal" className="justify-content-center">
                   {genres.map((gen) => (
-                    <Grid key={gen} item xs="auto">
-                      <Typography className={styles.genres} variant="subtitle1" color="text-secondary">
-                        {gen + " | "}
-                      </Typography>
-                    </Grid>
+                    <Col lg="auto" key={gen} className={styles.genres}>
+                      {gen + " | "}
+                    </Col>
                   ))}
-                </Grid>
+                </Row>
               </div>
             </div>
           </div>
         </div>
       </Link>
-    </Grid>
+    </Row>
   );
 }
 

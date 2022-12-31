@@ -2,10 +2,11 @@
 import styles from "./pagination.module.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 export default function Pagination({ gamePerPage, allGames, pagination }) {
+  
   const currentPage = useSelector((state) => state.currentPage);
   const pageNumbers = [];
-
   for (let i = 1; i <= Math.ceil(allGames / gamePerPage); i++) {
     pageNumbers.push(i);
   }
@@ -14,9 +15,8 @@ export default function Pagination({ gamePerPage, allGames, pagination }) {
   useEffect(() => {
     pageNumbers.length === 0 ? setVisible(true) : setVisible(false);
   }, [pageNumbers]);
-  console.log(currentPage);
   return (
-    <div className={styles.container}>
+    <div  className={styles.container}>
       <nav>
         <ul className={styles.navbar}>
           <li hidden={visible}>

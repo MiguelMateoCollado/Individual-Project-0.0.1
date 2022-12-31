@@ -200,7 +200,7 @@ export default function GamesCreate() {
               {<p>{errors.rating}</p>}
             </div>
             <div className={styles.item}>
-              <h3>Fecha</h3>
+              <h3>Date</h3>
               <input
                 type="date"
                 name="date"
@@ -211,7 +211,7 @@ export default function GamesCreate() {
               {<p className={styles.alert}>{errors.date}</p>}
             </div>
             <div className={styles.item}>
-              <h3 className={styles.genres}>genres</h3>
+              <h3 className={styles.genres}>Genres</h3>
               {genres?.map((gen) => {
                 return (
                   <div className={styles.switcher}>
@@ -231,7 +231,7 @@ export default function GamesCreate() {
               {<p className={styles.alert}>{errors.genres}</p>}
             </div>
             <div className={styles.item}>
-              <h3 className={styles.genres}>Plataformas</h3>
+              <h3 className={styles.genres}>Platforms</h3>
               {platforms.map((plat) => {
                 return (
                   <div className={styles.switcher}>
@@ -256,7 +256,7 @@ export default function GamesCreate() {
                 disabled={button}
                 type="Submit"
               >
-                Enviar Formulario
+                Submit 
               </button>
               <Link className={styles.boton} to="/">
                 Volver

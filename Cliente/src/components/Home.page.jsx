@@ -1,15 +1,16 @@
 import CardGame from "./CardGame/CardGame";
-import Container from "@mui/material/Container";
 import { getAllGames, SetCurrentPage } from "../redux/Actions/actions";
-import { Grid } from "@mui/material";
 import React from "react";
 import Loader from "./Loader/Loader";
 import Pagination from "./Pagination/Pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Col from "react-bootstrap/Col";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import Styles from "./Home.module.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 function Home() {
   const dispatch = useDispatch();
 
@@ -34,26 +35,32 @@ function Home() {
       {restGame.length !== 0 && !restGame[0].message ? (
         <div>
           <Container>
-            <Grid container justifyContent="center">
-              <Navbar />
-              <Pagination
-                gamePerPage={gamePerPage}
-                allGames={allGames.length}
-                pagination={pagination}
-              />
-            </Grid>
-            <Grid container spacing={4} justifyContent="center">
+            <Row className="justify-content-center">
+              <Col lg="12" className="mt-3">
+                <Navbar />
+              </Col>
+              <Col lg="12" className="mt-3 mb-3">
+                <Pagination
+                  gamePerPage={gamePerPage}
+                  allGames={allGames.length}
+                  pagination={pagination}
+                />
+              </Col>
+            </Row>
+            <Row className="justify-content-center">
               {currentGames.length !== 0 && !currentGames[0].message ? (
                 currentGames.map((game) => {
                   if (typeof game === "object") {
                     return (
-                      <CardGame
-                        id={game.id}
-                        key={game.id}
-                        image={game.image}
-                        name={game.name}
-                        genres={game.generos}
-                      />
+                      <Col className="mb-4">
+                        <CardGame
+                          id={game.id}
+                          key={game.id}
+                          image={game.image}
+                          name={game.name}
+                          genres={game.generos}
+                        />
+                      </Col>
                     );
                   }
                 })
@@ -61,14 +68,14 @@ function Home() {
                 restGame.length === 0 ? (
                   <h1>Loading...</h1>
                 ) : (
-                  <div className={Styles.home}>
+                  <div>
                     <h1>No hay Juegos!</h1>
                   </div>
                 )
               ) : (
                 <h1>{allGames[0] && allGames[0].message}</h1>
               )}
-            </Grid>
+            </Row>
           </Container>
           <Footer></Footer>
         </div>

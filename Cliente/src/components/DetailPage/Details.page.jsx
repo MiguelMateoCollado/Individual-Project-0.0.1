@@ -31,20 +31,20 @@ function Details() {
               <h1>{myGame.name}</h1>
               <h3>Rating: {myGame.rating}</h3>
               <h3>Date: {myGame.date}</h3>
-              <h2>Generos</h2>
+              <h2>Genres</h2>
               <h3>
                 {!myGame.createdInDb
                   ? myGame.generos + " "
                   : myGame.generos.map((gen) => gen.name + " ")}
               </h3>
-              <h2>Plataformas</h2>
+              <h2>Platforms</h2>
               <h3>
                 {!myGame.createdInDb
                   ? myGame.platforms + " "
                   : myGame.platforms.map((plat) => plat + " ")}
               </h3>
               <Link href="/">
-                <button className={styles.botonRetorna}>volver</button>
+                <button className={styles.botonRetorna}>Back</button>
               </Link>
             </div>
           </div>

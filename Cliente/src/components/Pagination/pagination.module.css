@@ -19,6 +19,8 @@
 
 .item {
   padding: 15px;
+  text-decoration: none;
+  color: black;
 }
 
 .span {
@@ -29,6 +31,7 @@
 .color {
   border-radius: 100%;
   padding: 15px;
+  text-decoration: none;
   color: rgb(165, 4, 4);
 }
 

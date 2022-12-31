@@ -1,12 +1,10 @@
-.navbar {
-  margin-top: 2%;
-}
 
 .boton {
+  width: 125px;
+  height: auto;
   cursor: pointer;
   color: crimson;
   border: none;
-  margin-inline: 10px;
   text-decoration: none;
   font-family: inherit;
   padding: 0.6em 1.3em;

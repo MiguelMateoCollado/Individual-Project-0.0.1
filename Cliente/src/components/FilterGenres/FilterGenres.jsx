@@ -15,7 +15,7 @@ export default function FilterGenres({ estado,css }) {
         name="generos"
         id="generos"
         disabled={estado}
-        className={css}
+        className={styles.boton}
         onChange={(e) => handleChange(e)}
       >
         <option value="All Games">All Games</option>

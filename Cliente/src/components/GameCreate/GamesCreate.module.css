@@ -127,7 +127,7 @@ div.switcher input:checked {
 
 .boton {
   cursor: pointer;
-  color: rgb(163, 5, 5);
+  color: crimson;
   border: none;
   margin-inline: 10px;
   text-decoration: none;
@@ -136,12 +136,12 @@ div.switcher input:checked {
   background: white;
   font-weight: 900;
   font-size: 18px;
-  box-shadow: 0.2em 0.2em rgb(163, 5, 5);
+  box-shadow: 0.2em 0.2em crimson;
   transition: 0.1s;
 }
 .boton:hover {
   border-style: solid;
-  border-color: rgb(163, 5, 5);
+  border-color: crimson;
   -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;

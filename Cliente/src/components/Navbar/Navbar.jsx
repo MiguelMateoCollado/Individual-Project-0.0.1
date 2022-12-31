@@ -4,8 +4,11 @@ import FilterRating from "../FilterRating/SortByRating";
 import FilterAlfabetic from "../FilterAlfabetic/FilterAlfabetic";
 import CreatedGames from "../CreatedGames/CreatedGames";
 import CreatedLink from "../CreateLink/CreateLink";
-import styles from "./Navbar.module.css"
-import { Grid } from "@mui/material";
+import Stack from "react-bootstrap/Stack";
+import styles from "./Navbar.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/Col";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -18,27 +21,15 @@ function Navbar() {
     [allGames, setActivate]
   );
   return (
-    <div className={styles.navbar}>
-      <Grid container >
-        <Grid>
-          <InputSearch />
-        </Grid>
-        <Grid>
-          <FilterGenres estado={activite} css={styles.boton} />
-        </Grid>
-        <Grid>
-          <FilterRating estado={activite} css={styles.boton}/>
-        </Grid>
-        <Grid>
-          <FilterAlfabetic estado={activite} css={styles.boton}/>
-        </Grid>
-        <Grid>
-          <CreatedGames css={styles.boton} />
-        </Grid>
-        <Grid sx={{ marginTop: 1.5 }} >
-          <CreatedLink css={styles.boton}/>
-        </Grid>
-      </Grid>
+    <div>
+      <Stack direction="horizontal" gap={4}>
+        <InputSearch />
+        <FilterGenres estado={activite} css={styles.boton} />
+        <FilterRating estado={activite} css={styles.boton} />
+        <FilterAlfabetic estado={activite} css={styles.boton} />
+        <CreatedGames css={styles.boton} />
+        <CreatedLink css={styles.boton} />
+      </Stack>
     </div>
   );
 }
