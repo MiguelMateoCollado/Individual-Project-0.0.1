@@ -5,7 +5,7 @@ import {
   refreshPage,
   SortRatingLow,
 } from "../../redux/Actions/actions";
-import styles from "./SortByRating.module.css";
+
 export default function SortByRating({ estado, css }) {
   const [button, setButton] = useState(false);
   const dispatch = useDispatch();

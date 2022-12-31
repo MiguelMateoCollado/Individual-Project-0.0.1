@@ -31,15 +31,15 @@ function Home() {
   };
 
   return (
-    <div>
+    <div >
       {restGame.length !== 0 && !restGame[0].message ? (
         <div>
-          <Container>
-            <Row className="justify-content-center">
-              <Col lg="12" className="mt-3">
+          <Container >
+            <Row className="justify-content-center ">
+              <Col lg="12" className="mt-lg-3">
                 <Navbar />
               </Col>
-              <Col lg="12" className="mt-3 mb-3">
+              <Col lg="12" className="mt-lg-3 mb-lg-3">
                 <Pagination
                   gamePerPage={gamePerPage}
                   allGames={allGames.length}
@@ -47,12 +47,12 @@ function Home() {
                 />
               </Col>
             </Row>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center d-flex flex-wrap">
               {currentGames.length !== 0 && !currentGames[0].message ? (
                 currentGames.map((game) => {
                   if (typeof game === "object") {
                     return (
-                      <Col className="mb-4">
+                      <Col lg="3" xl="3" className=" my-3  mx-lg-3 ms-xl-5  ">
                         <CardGame
                           id={game.id}
                           key={game.id}

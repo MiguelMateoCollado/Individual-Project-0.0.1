@@ -4,13 +4,13 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function Pagination({ gamePerPage, allGames, pagination }) {
-  
+  const [width, setWidth] = useState(window.innerWidth);
   const currentPage = useSelector((state) => state.currentPage);
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(allGames / gamePerPage); i++) {
     pageNumbers.push(i);
   }
-
+  console.log(width)
   const [visible, setVisible] = useState(true);
   useEffect(() => {
     pageNumbers.length === 0 ? setVisible(true) : setVisible(false);
@@ -31,7 +31,7 @@ export default function Pagination({ gamePerPage, allGames, pagination }) {
               </a>
             )}
           </li>
-          {pageNumbers?.map((number, index) => (
+          { width !== 360 && pageNumbers?.map((number, index) => (
             <li key={index}>
               <a
                 className={

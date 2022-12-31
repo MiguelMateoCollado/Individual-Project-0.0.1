@@ -20,3 +20,34 @@
   -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }
+
+@media only screen and (max-width: 360px) {
+  .boton {
+    width: 300px;
+    cursor: pointer;
+    color: rgb(32, 120, 221);
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    background: white;
+    font-weight: 900;
+    font-size: 18px;
+    box-shadow: 0.2em 0.2em rgb(32, 120, 221);
+    transition: 0.1s;
+    -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  }
+  .boton:hover {
+    border-style: solid;
+    border-color: rgb(32, 120, 221);
+    -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  }
+}

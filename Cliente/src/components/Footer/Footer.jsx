@@ -1,13 +1,16 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import "./Footer.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/esm/Col";
 function Footer() {
   return (
-    <Container fluid className={styles.footer}>
-      <Row className="justify-content-center px-5 py-5 ">
-        <Col lg="4">
+    <Container
+      fluid
+      className="footer text-light py-xxl-5 px-xxl-5 py-lg-5 px-lg-5 px-sm-0 align-items-center justify-content-center text-align-center"
+    >
+      <Row className="justify-content-center ">
+        <Col xxl="3" sm="12" lg="3" className="">
           <span>
             <h4 className="fs-3">MIGUEL A. MATEO </h4>
             <h6>Full Stack Developer</h6>
@@ -21,12 +24,17 @@ function Footer() {
           <h5>TECNOLOGY</h5>
           <p>Javascript | React | Express | Redux</p>
         </Col>
-        <Col className="text-center justify-content-center align-items-center d-flex  ">
+        <Col
+          sm="12"
+          lg="3"
+          xxl="3"
+          className="text-center justify-content-center align-items-center d-flex "
+        >
           <div>
             <h2 className="fs-1">CONTACT ME</h2>
-            <div className={styles.line}></div>
+            <div className="line"></div>
             <a
-              className="fs-1 px-3 "
+              className="fs-1 fs-1 px-3"
               href="https://www.linkedin.com/in/miguelmateojs/"
             >
               <ion-icon name="logo-linkedin"></ion-icon>
@@ -43,11 +51,11 @@ function Footer() {
             <h6>miguelamc258@gmail.com</h6>
           </div>
         </Col>
-        <Col>
+        <Col lg="2" sm="12">
           <h3>SKILLS</h3>
-          <p className={styles.para}>Graphic Designer</p>
-          <p className={styles.para}>Front-end Developer</p>
-          <p className={styles.para}>Back-end Developer</p>
+          <p className="para">Graphic Designer</p>
+          <p className="para">Front-end Developer</p>
+          <p className="para">Back-end Developer</p>
         </Col>
       </Row>
     </Container>
