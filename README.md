@@ -1,6 +1,5 @@
 # Individual-Project-0.0.1
 
-Este proyecto es una aplicación web que permite  buscar,filtrar y crear Videojuegos . Utiliza una base de datos SQL para almacenar los datos de los generes y las plataformas y una interfaz con varias tarjetas y una barra con filtros y una barra de busqueda construida con React. La aplicación también incluye Está diseñada para implementar mis conocimientos de back-end y front-end con las herramientas React.js, Express, Sequelize y la base de datos PostgreSQL.
+This project is a web application that allows you to search, filter, and create video games. It uses an SQL database to store data on genres and platforms and an interface with multiple cards and a bar with filters and a search bar built with React. The application also includes responsive design to improve my skills with CSS and is very experimental as I try to integrate many things to improve it. It is designed to implement my knowledge of back-end and front-end with the tools React.js, Express, Sequelize, and the PostgreSQL database. 
 
-Continuare realizando le cambios, incluye responsive para mejorar mis habilidades con el CSS y es muy experimentar ya que intento integrar muchas cosas para mejorarla.
-
+I will continue making changes to improve the application.
