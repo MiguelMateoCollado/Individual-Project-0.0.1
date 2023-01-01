@@ -1,5 +1,5 @@
 import CardMedia from "@mui/material/CardMedia";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/esm/Row";
 import styles from "./CardGame.module.css";
@@ -29,12 +29,12 @@ function CardGame({ genres, name, id, image }) {
                 >
                   {name}
                 </p>
-                <Row  direction="horizontal" className="justify-content-center">
-                  {genres.map((gen) => (
-                    <Col lg="auto"  key={gen} className={styles.genres}>
-                      {gen + " | "}
-                    </Col>
-                  ))}
+                <Row direction="horizontal" className={styles.genres}>
+                  <Col className={styles.genItem}>
+                    {genres.map((gen) => (
+                      <span key={gen}>{gen + " | "}</span>
+                    ))}
+                  </Col>
                 </Row>
               </div>
             </div>

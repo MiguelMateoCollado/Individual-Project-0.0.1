@@ -68,6 +68,7 @@
   -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 .container .card .body_card .card_content {
   width: 80%;
@@ -81,9 +82,16 @@
   text-align: center;
 }
 .container .card .body_card .card_content .genres {
-  padding: 1px;
-  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
   font-weight: 500;
   color: rgb(231, 99, 99);
+  text-align: center;
+}
+
+.genItem {
+  padding: 0;
+  margin: 0;
 }
 
