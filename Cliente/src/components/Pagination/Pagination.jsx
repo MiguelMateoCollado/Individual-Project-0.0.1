@@ -10,18 +10,17 @@ export default function Pagination({ gamePerPage, allGames, pagination }) {
   for (let i = 1; i <= Math.ceil(allGames / gamePerPage); i++) {
     pageNumbers.push(i);
   }
-  console.log(width)
   const [visible, setVisible] = useState(true);
   useEffect(() => {
     pageNumbers.length === 0 ? setVisible(true) : setVisible(false);
   }, [pageNumbers]);
   return (
-    <div  className={styles.container}>
+    <div className={styles.container}>
       <nav>
         <ul className={styles.navbar}>
           <li hidden={visible}>
             {currentPage - 1 < 1 ? (
-              <span className={styles.span}> &laquo; </span>
+              <span className={`${styles.span}`}> &laquo; </span>
             ) : (
               <a
                 className={styles.item}
@@ -31,18 +30,19 @@ export default function Pagination({ gamePerPage, allGames, pagination }) {
               </a>
             )}
           </li>
-          { width !== 360 && pageNumbers?.map((number, index) => (
-            <li key={index}>
-              <a
-                className={
-                  currentPage === index + 1 ? styles.color : styles.item
-                }
-                onClick={() => pagination(number)}
-              >
-                {number}
-              </a>
-            </li>
-          ))}
+          {width !== 360 &&
+            pageNumbers?.map((number, index) => (
+              <li key={index}>
+                <a
+                  className={
+                    currentPage === index + 1 ? styles.color : styles.item
+                  }
+                  onClick={() => pagination(number)}
+                >
+                  {number}
+                </a>
+              </li>
+            ))}
           <li hidden={visible}>
             {currentPage === pageNumbers.length ? (
               <span className={styles.span}> &raquo; </span>
