@@ -15,6 +15,7 @@ const database = new Sequelize(DB_URL, {
 
 */
 
+
 const database = new Sequelize(DB_DEPLOY, {
   logging: false,
   native: false,
