@@ -6,7 +6,7 @@ export function getAllGames() {
     try {
       //var json = await axios.get(`https://individual-project-001-production.up.railway.app/videogames`);
       var json = await axios.get(
-        `https://servidor-pi-production.up.railway.app/videogames`
+        `https://individual-project.onrender.com/videogames`
       );
       return dispatch({
         type: "GET_ALL_GAMES",
@@ -23,7 +23,7 @@ export function getAllGames() {
 //Trae todos los juego
 export async function CreateGame(payload) {
   const create = await axios.post(
-    `https://servidor-pi-production.up.railway.app/create`,
+    `https://individual-project.onrender.com/create`,
     {
       name: payload.name,
       date: payload.date,
@@ -40,7 +40,7 @@ export function getGenres() {
   return async function (dispatch) {
     try {
       let genres = await axios.get(
-        `https://servidor-pi-production.up.railway.app/generos`
+        `https://individual-project.onrender.com/generos`
       );
       return dispatch({
         type: "GET_GENRES",
@@ -61,7 +61,7 @@ export function getPlatforms() {
   return async function (dispatch) {
     try {
       let platforms = await axios.get(
-        `https://servidor-pi-production.up.railway.app/platforms`
+        `https://individual-project.onrender.com/platforms`
       );
       return dispatch({
         type: "GET_PLATFORMS",
@@ -82,7 +82,7 @@ export function getDetails(id) {
   return async function (dispatch) {
     try {
       var game = await axios.get(
-        `https://servidor-pi-production.up.railway.app/videogames/${id}`
+        `https://individual-project.onrender.com/videogames/${id}`
       );
       return dispatch({
         type: "GET_DETAILS",
@@ -102,7 +102,7 @@ export function getDetails(id) {
 export async function   createGame(payload) {
   try {
     await axios.post(
-      `https://servidor-pi-production.up.railway.app/create`,
+      `https://individual-project.onrender.com/create`,
       payload
     );
     return alert("Se a creado el game!");
